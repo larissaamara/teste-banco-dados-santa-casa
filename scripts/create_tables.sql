@@ -1,20 +1,38 @@
+Criar tabela de clientes
 CREATE TABLE clientes (
-    id_cliente INTEGER PRIMARY KEY,
-    nome TEXT,
-    email TEXT
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT NOT NULL,
+    email TEXT UNIQUE,
+    telefone TEXT,
+    data_cadastro DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
+ Criar tabela de produtos
 CREATE TABLE produtos (
-    id_produto INTEGER PRIMARY KEY,
-    nome TEXT,
-    preco REAL
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT NOT NULL,
+    descricao TEXT,
+    preco REAL NOT NULL,
+    estoque INTEGER DEFAULT 0
 );
 
+ Criar tabela de vendas
 CREATE TABLE vendas (
-    id_venda INTEGER PRIMARY KEY,
-    id_cliente INTEGER,
-    id_produto INTEGER,
-    quantidade INTEGER,
-    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
-    FOREIGN KEY (id_produto) REFERENCES produtos(id_produto)
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    cliente_id INTEGER,
+    data_venda DATETIME DEFAULT CURRENT_TIMESTAMP,
+    total REAL,
+    FOREIGN KEY (cliente_id) REFERENCES clientes(id)
+);
+
+ Criar tabela de itens da venda
+CREATE TABLE itens_venda (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    venda_id INTEGER,
+    produto_id INTEGER,
+    quantidade INTEGER NOT NULL,
+    preco_unitario REAL NOT NULL,
+    subtotal REAL,
+    FOREIGN KEY (venda_id) REFERENCES vendas(id),
+    FOREIGN KEY (produto_id) REFERENCES produtos(id)
 );
