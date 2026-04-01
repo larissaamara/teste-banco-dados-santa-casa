@@ -1,33 +1,36 @@
-# Desafio Técnico: E-commerce SQL
+Desafio Técnico: Analista de Banco de Dados - Santa Casa
+📝 Descrição do Projeto
+Este repositório contém a solução completa para o desafio técnico de Analista de Banco de Dados Júnior. O foco do projeto foi a modelagem de um ecossistema de e-commerce e a demonstração de conhecimentos sólidos em SQL e bancos de dados relacionais (Oracle/SQLite).
 
-Descrição do Projeto
-Este projeto foi desenvolvido como parte de um desafio técnico para a vaga de **Analista de Banco de Dados**. O objetivo foi modelar e estruturar um banco de dados relacional para um cenário de e-commerce, focando na integridade dos dados e na extração de insights (relatório de produtos mais vendidos).
+🛠️ Tecnologias e Metodologia
+Motor de Banco de Dados: SQLite3.
 
-# Tecnologias Utilizadas
-* **Motor:** SQLite3 (devido à sua portabilidade e conformidade com padrões SQL).
-* **Conceitos:** Modelagem Relacional, Normalização (3ª FN), Joins e Funções de Agregação.
+Modelagem Relacional: Estrutura normalizada (3ª Forma Normal) para garantir integridade e performance.
 
+Padrões: Uso de aliases, tratamento de valores nulos e junções externas para relatórios analíticos.
 
-# Modelagem do Banco
-O banco foi estruturado para garantir a **3ª Forma Normal**, separando as entidades para evitar redundância e inconsistências:
+📂 Estrutura do Repositório
+Para facilitar a avaliação, o projeto foi dividido nos seguintes arquivos:
 
-* **clientes:** Cadastro e identificação dos usuários.
-* **produtos:** Catálogo de itens e controle de estoque.
-* **vendas:** Cabeçalho das transações (data, cliente e total).
-* **itens_venda:** Tabela associativa para detalhamento dos produtos em cada venda, permitindo múltiplos itens por pedido.
+create_tables.sql: Script DDL contendo a criação das tabelas clientes, produtos, vendas e itens_venda.
 
-# Relatório de Vendas
-Para a extração do relatório de **"Produtos mais vendidos"**, a query foi desenhada utilizando:
+inserir_dados.sql: Script DML com a massa de dados de teste.
 
-* **LEFT JOIN:** Para garantir a inclusão de todos os produtos do catálogo, inclusive aqueles que ainda não possuem vendas registradas.
-* **COALESCE:** Para converter valores nulos em `0`, garantindo um relatório limpo e pronto para análise de BI.
-* **SUM e GROUP BY:** Para agregação precisa do volume total de itens vendidos por produto.
+queries.sql: Consulta analítica para o ranking de produtos mais vendidos.
 
- # Como Executar
-1. Certifique-se de ter o **SQLite3** instalado.
-2. Execute o script `create_tables.sql` para criar a estrutura das tabelas (DDL).
-3. Execute o script `inserir_dados.sql` para popular as tabelas com os dados de teste (DML).
-4. Rode a consulta de análise disponível no arquivo `queries.sql`.
-2. Execute o script `create_tables.sql` para criar a estrutura das tabelas (DDL).
-3. Execute o script `inserir_dados.sql` para popular as tabelas com os dados de teste (DML).
-4. Rode a consulta de análise disponível no arquivo `queries.sql`.
+respostas_teoricas.md: Documento contendo as resoluções das questões de múltipla escolha e conceitos sobre SQL/Oracle.
+
+📊 Destaque da Solução Analítica
+Na construção da query de vendas (queries.sql), optei pelo uso de LEFT JOIN em conjunto com a função COALESCE.
+
+Motivação: Garantir que o relatório de "Produtos mais vendidos" apresente o catálogo completo, listando inclusive itens com zero vendas. Isso evita lacunas na análise de dados e fornece um panorama real do giro de estoque.
+
+🚀 Como Executar
+Certifique-se de ter o SQLite3 instalado.
+
+Execute os comandos na ordem:
+
+Bash
+sqlite3 santa_casa.db < create_tables.sql
+sqlite3 santa_casa.db < inserir_dados.sql
+sqlite3 santa_casa.db < queries.sql
