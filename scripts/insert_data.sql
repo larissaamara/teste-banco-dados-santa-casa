@@ -17,7 +17,7 @@ INSERT INTO vendas (cliente_id, total) VALUES (1, 3500.00);
 INSERT INTO vendas (cliente_id, total) VALUES (2, 490.00);
 INSERT INTO vendas (cliente_id, total) VALUES (3, 250.00);
 INSERT INTO vendas (cliente_id, total) VALUES (4, 420.00);
-INSERT INTO vendas (cliente_id, total) VALUES (5, 500.00);
+INSERT INTO vendas (cliente_id, total) VALUES (5, 240.00);
 
 Inserir item da venda
 INSERT INTO itens_venda (venda_id, produto_id, quantidade, preco_unitario, subtotal)
