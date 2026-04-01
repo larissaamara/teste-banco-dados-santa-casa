@@ -1,8 +1,8 @@
 SELECT 
-    produtos.id,
-    produtos.nome,
-    SUM(itens_venda.quantidade) total_vendido
-FROM itens_venda
-JOIN produtos ON produtos.id = itens_venda.produto_id
-GROUP BY produtos.id, produtos.nome
+    p.id, 
+    p.nome, 
+    SUM(iv.quantidade) AS total_vendido
+FROM produtos p
+JOIN itens_venda iv ON p.id = iv.produto_id
+GROUP BY p.id, p.nome
 ORDER BY total_vendido DESC;
