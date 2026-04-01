@@ -14,7 +14,7 @@ INSERT INTO produtos (nome, preco, estoque) VALUES ('Headset', 300.00, 15);
 
 Criar venda
 INSERT INTO vendas (cliente_id, total) VALUES (1, 3500.00);
-INSERT INTO vendas (cliente_id, total) VALUES (2, 1020.00);
+INSERT INTO vendas (cliente_id, total) VALUES (2, 490.00);
 INSERT INTO vendas (cliente_id, total) VALUES (3, 250.00);
 INSERT INTO vendas (cliente_id, total) VALUES (4, 1320.00);
 INSERT INTO vendas (cliente_id, total) VALUES (5, 500.00);
