@@ -1,5 +1,5 @@
 SELECT 
-    p.id,
+    p.id, 
     p.nome, 
     COALESCE(SUM(iv.quantidade), 0) AS total_vendido
 FROM produtos p
