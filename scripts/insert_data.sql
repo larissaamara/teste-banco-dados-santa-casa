@@ -36,4 +36,4 @@ INSERT INTO itens_venda (venda_id, produto_id, quantidade, preco_unitario, subto
 VALUES (4, 2, 1, 120.00, 120.00);
 
 INSERT INTO itens_venda (venda_id, produto_id, quantidade, preco_unitario, subtotal)
-VALUES (5, 2, 2, 120.00, 240.00);;
+VALUES (5, 2, 2, 120.00, 240.00);
