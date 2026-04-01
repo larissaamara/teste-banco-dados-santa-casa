@@ -1,3 +1,12 @@
+Criar tabela de clientes
+CREATE TABLE clientes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT NOT NULL,
+    email TEXT UNIQUE,
+    telefone TEXT,
+    data_cadastro DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
 Criar tabela de produtos
 CREATE TABLE produtos (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
