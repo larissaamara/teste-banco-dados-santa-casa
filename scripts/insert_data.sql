@@ -16,7 +16,7 @@ Criar venda
 INSERT INTO vendas (cliente_id, total) VALUES (1, 3500.00);
 INSERT INTO vendas (cliente_id, total) VALUES (2, 490.00);
 INSERT INTO vendas (cliente_id, total) VALUES (3, 250.00);
-INSERT INTO vendas (cliente_id, total) VALUES (4, 1320.00);
+INSERT INTO vendas (cliente_id, total) VALUES (4, 420.00);
 INSERT INTO vendas (cliente_id, total) VALUES (5, 500.00);
 
 Inserir item da venda
